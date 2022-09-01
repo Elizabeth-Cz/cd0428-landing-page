@@ -23,6 +23,17 @@
  * 
 */
 
+const navEl = document.querySelector(".navbar__menu")
+const navListEl = document.querySelector("#navbar__list")
+const sections = document.querySelectorAll("section")
+
+console.log(sections);
+
+sections.forEach((section)=>{
+    const navItem = document.createElement("li");
+    navItem.textContent = section.querySelector("h2").textContent;
+    navListEl.appendChild(navItem);
+})
 
 /**
  * End Global Variables
