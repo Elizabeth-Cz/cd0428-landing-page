@@ -78,8 +78,15 @@ const anchorList = document.querySelectorAll("a");
 for (const anchor of anchorList) {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
-    document
+    // document
+    //   .querySelector(e.target.getAttribute("href"))
+    //   .scrollIntoView({ behavior: "smooth" });
+    const box = document
       .querySelector(e.target.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
+      .getBoundingClientRect();
+    scrollBy({
+      top: box.top - 150,
+      behavior: "smooth",
+    });
   });
 }
