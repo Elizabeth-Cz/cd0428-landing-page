@@ -27,37 +27,26 @@ const navEl = document.querySelector(".navbar__menu");
 const navListEl = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("[data-nav]");
 
-/**
- * End Global Variables
- * Start Helper Functions
- *
- */
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
-
 // build the nav
 let navListAnchor;
 
 sections.forEach((section) => {
+  // create list item for each section
   const navListItem = document.createElement("li");
+  // create anchor to append to list item
   navListAnchor = document.createElement("a");
   navListAnchor.classList.add("menu__link");
+  // set the content of the anchor to the data-nav attribute
   navListAnchor.textContent = section.dataset.nav;
+  //set the href of the anchor to the id of each section
   navListAnchor.href = `#${section.id}`;
   navListItem.append(navListAnchor);
   navListEl.appendChild(navListItem);
-  // console.log(navListEl);
 });
 
 for (let i = 0; i < navListEl.length; i++) {
   console.log(navListEl[i]);
 }
-
-// try for of/for in loop for navigation
 
 // Add class 'active' to section when near top of viewport
 function makeActive() {
@@ -83,8 +72,9 @@ function makeActive() {
 document.addEventListener("scroll", function () {
   makeActive();
 });
-
+// get a node list of all anchors
 const anchorList = document.querySelectorAll("a");
+// add an event listener for each anchor for smooth scrolling
 for (const anchor of anchorList) {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
