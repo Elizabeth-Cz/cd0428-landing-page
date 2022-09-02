@@ -10,7 +10,7 @@
 
 /* ---- Base Rules ---- */
 body {
-  background: rgb(136, 203, 171);
+  background: #88cbab;
   background: linear-gradient(
     0deg,
     rgba(136, 203, 171, 1) 0%,
@@ -59,17 +59,7 @@ main {
 
 section {
   position: relative;
-  /* min-height: 80vh; */
-}
-
-form {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-textarea {
-  resize: none;
+  min-height: 80vh;
 }
 
 /* ---- Module Rules ---- */
@@ -86,7 +76,6 @@ textarea {
   display: inline-block;
   font-family: "Oxygen", Sans-Serif;
 }
-
 .navbar__menu .menu__link {
   display: block;
   padding: 1em;
@@ -126,6 +115,18 @@ textarea {
 .landing__container {
   padding: 1em;
   text-align: left;
+}
+.active {
+  background-color: #88cbab;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 50%;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 35em) {
