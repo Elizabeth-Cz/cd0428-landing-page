@@ -137,7 +137,7 @@
       </section>
       <section id="section5" data-nav="Sign up">
         <h2>Sign up!</h2>
-        <form action="./" method="post" id="form">
+        <form method="POST" id="form" action="index.html">
           <label for="name">Full Name</label>
           <input type="text" name="full-name" id="full-name" required />
           <label for="date">Date of Birth</label>
@@ -146,8 +146,9 @@
           <input type="email" name="email" id="email" required />
           <label for="message">Message</label>
           <textarea name="message" id="message" cols="30" rows="10"></textarea>
-          <input type="submit" name="submit" id="submit" value="Hit me up" />
+          <button type="submit" name="submit" id="submit">Hit me up</button>
         </form>
+        <div class="info"></div>
       </section>
     </main>
     <footer class="page__footer">

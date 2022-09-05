@@ -26,6 +26,9 @@
 const navEl = document.querySelector(".navbar__menu");
 const navListEl = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("[data-nav]");
+const form = document.querySelector("form");
+let user = {};
+const infoDiv = document.querySelector(".info");
 
 // build the nav
 let navListAnchor;
@@ -76,9 +79,6 @@ const anchorList = document.querySelectorAll("a");
 for (const anchor of anchorList) {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
-    // document
-    //   .querySelector(e.target.getAttribute("href"))
-    //   .scrollIntoView({ behavior: "smooth" });
     const box = document
       .querySelector(e.target.getAttribute("href"))
       .getBoundingClientRect();
@@ -88,3 +88,19 @@ for (const anchor of anchorList) {
     });
   });
 }
+
+//form submission
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("submitted");
+  const name = document.querySelector("#full-name").value;
+  const email = document.querySelector("#email").value;
+  user = {
+    name,
+    email,
+  };
+  infoDiv.style.visibility = "visible";
+  infoDiv.innerHTML = `<p>your full name is ${user.name}</p>
+  <p>your email is ${user.email}</p>
+  <p>Thank you!</p>`;
+});
